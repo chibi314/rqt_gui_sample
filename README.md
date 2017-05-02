@@ -14,6 +14,6 @@ roscore
 In another terminal
 ```
 rqt [or rosrun rqt_gui rqt_gui]
-'''
+```
 
 Then select this plugin
