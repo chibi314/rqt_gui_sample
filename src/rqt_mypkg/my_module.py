@@ -39,6 +39,9 @@ class MyPlugin(Plugin):
         # plugins at once. Also if you open multiple instances of your 
         # plugin at once, these lines add number to make it easy to 
         # tell from pane to pane.
+        
+        self._widget.pushButton.clicked.connect(self.callbackFunction)
+
         if context.serial_number() > 1:
             self._widget.setWindowTitle(self._widget.windowTitle() + (' (%d)' % context.serial_number()))
         # Add widget to the user interface
@@ -62,3 +65,5 @@ class MyPlugin(Plugin):
         # Comment in to signal that the plugin has a way to configure
         # This will enable a setting button (gear icon) in each dock widget title bar
         # Usually used to open a modal configuration dialog
+    def callbackFunction(self):
+        rospy.loginfo("pushed")
